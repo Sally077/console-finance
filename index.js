@@ -86,3 +86,18 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+
+
+// var count= {};
+// for (var i=0;i<finances.length; i++) {
+//     var num = finances[i];
+
+//     count[num] = count[num] ? count[num] +1 :1;
+// }
+
+// console.log(count);
+
+console.log("Total Months :" +finances.length);
+
+
