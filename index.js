@@ -112,13 +112,20 @@ for (
             if (number > 0) {
                 sum++;
             }
-        }
-}
-
-console.log(sum)
-
-
 // This code finds all the values that have a positive number there are 86 values in the array
 // 12 of the valuues are negative this returns the value 74
 // my program adds each positive value as one but does not accumulate the total.
+
+        const initialValue = 0;
+        const totals = finances.reduce(
+            (accumulator, value) => accumulator + value,
+        initialValue
+        );
+        }
+        //Trying to add the reduce command to add the values of the 74 positive values
+}
+
+console.log(sum);
+
+console.log(totals);
 
