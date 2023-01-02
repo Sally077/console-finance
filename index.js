@@ -88,16 +88,37 @@ var finances = [
 ];
 
 
-
-// var count= {};
-// for (var i=0;i<finances.length; i++) {
-//     var num = finances[i];
-
-//     count[num] = count[num] ? count[num] +1 :1;
-// }
-
-// console.log(count);
-
 console.log("Total Months :" +finances.length);
 
+// const finances = [[1,a],[2,b]]
+// const sum = finances = (arr, col) =>
+//     arr.reduce((acc, row) => acc + row[col],0)
+
+// console.log("Total :" +sum(finances,0));
+
+let sum = 0;
+for (
+    let rowIndex = 0;
+    rowIndex < finances.length;
+    rowIndex++
+    ) {
+        const row = finances[rowIndex];
+        for (
+            let colIndex = 0;
+            colIndex < row.length;
+            colIndex++
+        ) {
+            const number = row[colIndex];
+            if (number > 0) {
+                sum++;
+            }
+        }
+}
+
+console.log(sum)
+
+
+// This code finds all the values that have a positive number there are 86 values in the array
+// 12 of the valuues are negative this returns the value 74
+// my program adds each positive value as one but does not accumulate the total.
 
