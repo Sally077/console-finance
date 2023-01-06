@@ -88,44 +88,47 @@ var finances = [
 ];
 
 
+
+
+// Total Months included in the data set
 console.log("Total Months :" +finances.length);
 
-// const finances = [[1,a],[2,b]]
-// const sum = finances = (arr, col) =>
-//     arr.reduce((acc, row) => acc + row[col],0)
+var totalProfitLoss;
+var currentChange;
+var totalChanges;
 
-// console.log("Total :" +sum(finances,0));
 
-let sum = 0;
-for (
-    let rowIndex = 0;
-    rowIndex < finances.length;
-    rowIndex++
-    ) {
-        const row = finances[rowIndex];
-        for (
-            let colIndex = 0;
-            colIndex < row.length;
-            colIndex++
-        ) {
-            const number = row[colIndex];
-            if (number > 0) {
-                sum++;
-            }
-// This code finds all the values that have a positive number there are 86 values in the array
-// 12 of the valuues are negative this returns the value 74
-// my program adds each positive value as one but does not accumulate the total.
 
-        const initialValue = 0;
-        const totals = finances.reduce(
-            (accumulator, value) => accumulator + value,
-        initialValue
-        );
-        }
-        //Trying to add the reduce command to add the values of the 74 positive values
-}
 
-console.log(sum);
 
-console.log(totals);
+// Net total amount of profits and losses over the entire period
 
+  for (var i = 0; i < finances.length; i++) { 
+
+   totalProfitLoss += finances[i][1];
+    
+
+    currentChange = (finances[i+1][1]-finances[i][1]);
+
+    totalChanges += currentChange;
+
+
+  }
+
+console.log("The Total Cost", totalProfitLoss);
+
+
+//find the average Changes in profit over the period
+
+console.log(totalProfitLoss/84);
+
+
+
+//find the greatest increase in profits over entire period (date and amount)
+
+console.log(finances.min[i][0][i][1]);
+
+
+//find the greatest decrease in profits over entire period (date and amount)
+
+console.log(finances.max[i][0] [i] [1]);
