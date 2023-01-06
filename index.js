@@ -86,3 +86,49 @@ var finances = [
 ['Jan-2017', 138230],
 ['Feb-2017', 671099]
 ];
+
+
+
+
+// Total Months included in the data set
+console.log("Total Months :" +finances.length);
+
+var totalProfitLoss;
+var currentChange;
+var totalChanges;
+
+
+
+
+
+// Net total amount of profits and losses over the entire period
+
+  for (var i = 0; i < finances.length; i++) { 
+
+   totalProfitLoss += finances[i][1];
+    
+
+    currentChange = (finances[i+1][1]-finances[i][1]);
+
+    totalChanges += currentChange;
+
+
+  }
+
+console.log("The Total Cost", totalProfitLoss);
+
+
+//find the average Changes in profit over the period
+
+console.log(totalProfitLoss/84);
+
+
+
+//find the greatest increase in profits over entire period (date and amount)
+
+console.log(finances.min[i][0][i][1]);
+
+
+//find the greatest decrease in profits over entire period (date and amount)
+
+console.log(finances.max[i][0] [i] [1]);
