@@ -97,27 +97,33 @@ console.log("Total Months :" +finances.length);
 // var currentChange;
 // var totalChanges;
 
+if (finances < minValue) {
+  minValue = finances;
+  maxIndex = i+1;
+}
 
-var minValue;
-var maxValue;
+
+// var minValue;
+// var maxValue;
 
 
 var totalProduct = function (array) {
-  var product = 1;
-  for (var i = 0; i < array.length; i++) {
-    var subarray = array[i];
+ var product = 1;
+ for (var i = 0; i < array.length; i++) {
+   var subarray = array[i];
 
     for (var j = 0; j < subarray.length; j++) {
       product *= subarray[j];
     }
+  
   }
 
-  return product;
+return product;
 }
 
-//The function cannot iterate values because it has strings  (Nan error)
+//The function above cannot iterate values because it has strings  (NaN error)
 //I need to find a way to either show the index of the second column or remove the string elements from the array
- console.log(totalProduct(finances));
+//  console.log(totalProduct(finances));
 
 
 
