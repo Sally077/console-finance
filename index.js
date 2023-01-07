@@ -93,42 +93,55 @@ var finances = [
 // Total Months included in the data set
 console.log("Total Months :" +finances.length);
 
-var totalProfitLoss;
-var currentChange;
-var totalChanges;
+// var totalProfitLoss;
+// var currentChange;
+// var totalChanges;
 
 
+var minValue;
+var maxValue;
 
 
+var totalProduct = function (array) {
+  var product = 1;
+  for (var i = 0; i < array.length; i++) {
+    var subarray = array[i];
 
-// Net total amount of profits and losses over the entire period
-
-  for (var i = 0; i < finances.length; i++) { 
-
-   totalProfitLoss += finances[i][1];
-    
-
-    currentChange = (finances[i+1][1]-finances[i][1]);
-
-    totalChanges += currentChange;
-
-
+    for (var j = 0; j < subarray.length; j++) {
+      product *= subarray[j];
+    }
   }
 
-console.log("The Total Cost", totalProfitLoss);
+  return product;
+}
+
+//The function cannot iterate values because it has strings  (Nan error)
+//I need to find a way to either show the index of the second column or remove the string elements from the array
+ console.log(totalProduct(finances));
 
 
-//find the average Changes in profit over the period
-
-console.log(totalProfitLoss/84);
 
 
 
-//find the greatest increase in profits over entire period (date and amount)
-
-console.log(finances.min[i][0][i][1]);
 
 
-//find the greatest decrease in profits over entire period (date and amount)
 
-console.log(finances.max[i][0] [i] [1]);
+// var minCost = finances.reduce((acc, innerArray) =>
+//   [acc,innerArray]
+//   );
+
+//   Math.min(minCost)
+
+//   console.log(minCost);
+
+
+//   if (finances < minValue) {
+//     minValue = finances;
+//     minIndex = i+1;
+//   }
+
+  
+//   if (finances < maxValue) {
+//     maxValue = finances;
+//     maxIndex = i+1;
+//   }
