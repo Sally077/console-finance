@@ -87,67 +87,40 @@ var finances = [
 ['Feb-2017', 671099]
 ];
 
+var totalFinance;
+var currentFinance;
+var totalChanges;
+var sum = 0;
+var highest;
+var lowest;
+
+//find total value of array column 1
+
+for(var i = 0; i < finances.length; i += 1) {
+  sum += finances[i][1]
+}
 
 
+
+// Total average value of finances
+
+for (var i = 0; i < finances.length-1; i++) {
+   totalFinance += finances[i][1];
+   currentFinance = (finances[i+1][1]-finances[i][1]);
+   totalChanges += currentFinance;
+}
+
+// var minValue
+ var lowest = Math.min(finances[i][1]);
+ 
+
+  
+// var maxValue;
+ var highest = Math.max(finances[i][1]);
 
 // Total Months included in the data set
 console.log("Total Months :" +finances.length);
-
-// var totalProfitLoss;
-// var currentChange;
-// var totalChanges;
-
-if (finances < minValue) {
-  minValue = finances;
-  maxIndex = i+1;
-}
-
-
-// var minValue;
-// var maxValue;
-
-
-var totalProduct = function (array) {
- var product = 1;
- for (var i = 0; i < array.length; i++) {
-   var subarray = array[i];
-
-    for (var j = 0; j < subarray.length; j++) {
-      product *= subarray[j];
-    }
-  
-  }
-
-return product;
-}
-
-//The function above cannot iterate values because it has strings  (NaN error)
-//I need to find a way to either show the index of the second column or remove the string elements from the array
-//  console.log(totalProduct(finances));
-
-
-
-
-
-
-
-
-// var minCost = finances.reduce((acc, innerArray) =>
-//   [acc,innerArray]
-//   );
-
-//   Math.min(minCost)
-
-//   console.log(minCost);
-
-
-//   if (finances < minValue) {
-//     minValue = finances;
-//     minIndex = i+1;
-//   }
-
-  
-//   if (finances < maxValue) {
-//     maxValue = finances;
-//     maxIndex = i+1;
-//   }
+console.log("Total : " +sum);
+console.log("Average Change :" + (totalChanges/(finances.length-1)).toFixed(2));
+console.log("Minimum Decrease : " + lowest);
+console.log("Maximum Increase : " + highest);
