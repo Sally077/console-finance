@@ -87,9 +87,9 @@ var finances = [
 ['Feb-2017', 671099]
 ];
 
-var totalFinance;
-var currentFinance;
-var totalChanges;
+var totalFinance = 0;
+var currentFinance = 0;
+var totalChanges = 0;
 var sum = 0;
 var highest;
 var lowest;
@@ -105,18 +105,35 @@ for(var i = 0; i < finances.length; i += 1) {
 // Total average value of finances
 
 for (var i = 0; i < finances.length-1; i++) {
-   totalFinance += finances[i][1];
-   currentFinance = (finances[i+1][1]-finances[i][1]);
-   totalChanges += currentFinance;
+    if (i !== finances.length-1) {
+      totalFinance += finances[i][1];
+      currentFinance = (finances[i+1][1]-finances[i][1]);
+      totalChanges += currentFinance;
+    }
 }
 
 // var minValue
- var lowest = Math.min(finances[i][1]);
- 
 
+var totalChangesArray = finances.map(function(finance, index){
+  if(index === 0){
+    return 0;
+  }
+  
+  return finance[1] - finances[index-1][1]
+})
+
+console.log(totalChangesArray)
+ var lowest = Math.min(...totalChangesArray);  //this returns the last value in the array
+ var lowestIndex = totalChangesArray.indexOf(lowest)
+ var lowestDate = finances[lowestIndex][0]
+ 
+// create array that finds the difference
   
 // var maxValue;
- var highest = Math.max(finances[i][1]);
+ var highest = Math.max(...totalChangesArray); //this returns the last value in the array
+ var highestIndex = totalChangesArray.indexOf(highest)
+ var highestDate = finances[highestIndex][0]
+ console.log(highestDate)
 
 // Total Months included in the data set
 console.log("Total Months :" +finances.length);
@@ -124,3 +141,5 @@ console.log("Total : " +sum);
 console.log("Average Change :" + (totalChanges/(finances.length-1)).toFixed(2));
 console.log("Minimum Decrease : " + lowest);
 console.log("Maximum Increase : " + highest);
+console.log(totalChanges);
+console.log(finances.length);
