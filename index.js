@@ -112,34 +112,34 @@ for (var i = 0; i < finances.length-1; i++) {
     }
 }
 
-// var minValue
+// Map function to map an array called finance that returns the difference
 
 var totalChangesArray = finances.map(function(finance, index){
   if(index === 0){
     return 0;
   }
-  
+
   return finance[1] - finances[index-1][1]
 })
-
+// using math min and index of to find the lowest value
 console.log(totalChangesArray)
- var lowest = Math.min(...totalChangesArray);  //this returns the last value in the array
+ var lowest = Math.min(...totalChangesArray);  
  var lowestIndex = totalChangesArray.indexOf(lowest)
  var lowestDate = finances[lowestIndex][0]
  
-// create array that finds the difference
+ 
   
-// var maxValue;
+// using math max and index of to find the highest value
  var highest = Math.max(...totalChangesArray); //this returns the last value in the array
  var highestIndex = totalChangesArray.indexOf(highest)
  var highestDate = finances[highestIndex][0]
- console.log(highestDate)
 
-// Total Months included in the data set
+
+// Console log of finances displaying the outputs for each task
+console.log("Financial Analysis")
+console.log("---------------------------------------------------------------")
 console.log("Total Months :" +finances.length);
 console.log("Total : " +sum);
 console.log("Average Change :" + (totalChanges/(finances.length-1)).toFixed(2));
-console.log("Minimum Decrease : " + lowest);
-console.log("Maximum Increase : " + highest);
-console.log(totalChanges);
-console.log(finances.length);
+console.log("Date : " + lowestDate + " Minimum Decrease " + lowest);
+console.log("Date : " + highestDate +  " Maximum Increase " + highest);
