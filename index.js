@@ -87,9 +87,9 @@ var finances = [
 ['Feb-2017', 671099]
 ];
 
-var totalFinance;
-var currentFinance;
-var totalChanges;
+var totalFinance = 0;
+var currentFinance = 0;
+var totalChanges = 0;
 var sum = 0;
 var highest;
 var lowest;
@@ -105,22 +105,41 @@ for(var i = 0; i < finances.length; i += 1) {
 // Total average value of finances
 
 for (var i = 0; i < finances.length-1; i++) {
-   totalFinance += finances[i][1];
-   currentFinance = (finances[i+1][1]-finances[i][1]);
-   totalChanges += currentFinance;
+    if (i !== finances.length-1) {
+      totalFinance += finances[i][1];
+      currentFinance = (finances[i+1][1]-finances[i][1]);
+      totalChanges += currentFinance;
+    }
 }
 
-// var minValue
- var lowest = Math.min(finances[i][1]);
+// Map function to map an array called finance that returns the difference
+
+var totalChangesArray = finances.map(function(finance, index){
+  if(index === 0){
+    return 0;
+  }
+
+  return finance[1] - finances[index-1][1]
+})
+// using math min and index of to find the lowest value
+console.log(totalChangesArray)
+ var lowest = Math.min(...totalChangesArray);  
+ var lowestIndex = totalChangesArray.indexOf(lowest)
+ var lowestDate = finances[lowestIndex][0]
  
-
+ 
   
-// var maxValue;
- var highest = Math.max(finances[i][1]);
+// using math max and index of to find the highest value
+ var highest = Math.max(...totalChangesArray); //this returns the last value in the array
+ var highestIndex = totalChangesArray.indexOf(highest)
+ var highestDate = finances[highestIndex][0]
 
-// Total Months included in the data set
+
+// Console log of finances displaying the outputs for each task
+console.log("Financial Analysis")
+console.log("---------------------------------------------------------------")
 console.log("Total Months :" +finances.length);
 console.log("Total : " +sum);
 console.log("Average Change :" + (totalChanges/(finances.length-1)).toFixed(2));
-console.log("Minimum Decrease : " + lowest);
-console.log("Maximum Increase : " + highest);
+console.log("Date : " + lowestDate + " Minimum Decrease " + lowest);
+console.log("Date : " + highestDate +  " Maximum Increase " + highest);

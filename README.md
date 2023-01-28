@@ -27,6 +27,17 @@ Overall I was very disapointed in this challenge and the lack of outcomes I feel
 
 I have resolved to take a break from this, submit the challenge and then go back and improve at a later date when I feel better informed  and have a better grasp of  knowledge of 2D arrays and using indices.
 
+# Updates
+
+Since the first attempt at this assignment I have managed to find some functions that have worked successfully. 
+
+Task 1 - Already completed (Months shown)
+Task 2 - This was almost completed but after playing around with the code I realised that I needed to set my variable to 0 as an error kept occuring that said Not a Number.
+Task 3 - I went online and found some code that looped through the values but I needed to add an if statement to show that if the value was not equal to the length of the array I think that this identified the minus values. In the console log I got the total changes to divide the months to return an average
+Task 4 - I originally thought that  by adding in the math.max and min values it would automatically generate the values but found out that in this case I had not linked my array to a series of values. This proved much more complicated that I originally thought. I used the map function to create an array with an if statement that checked if the value was 0 if the value was zero then it returned 0 if my program returned the values it mapped out a new array called finances in the second column(1) compared this to the original array and returned the lowest value using the indexOf command to search for the value I applied the math max documentation to display the highest value. 
+Task 5 - I was able to replicate the code for the highest value to show the greatest decrease by implementing the Mathmin function that I had originally used. 
+
+
 
 
 
@@ -49,7 +60,7 @@ Provide instructions and examples for use. Include screenshots as needed.
 
 To add a screenshot, create an `assets/images` folder in your repository and upload your screenshot to it. Then, using the relative file path, add it to your README using the following syntax:
 
-I have no assets to show for this.
+
 
 
 
@@ -81,6 +92,10 @@ https://www.youtube.com/shorts/_nOzU7Z8uMU
 
 I followed the bootcamp tutorials for week 4 
 
+I looked at the map function to help me to work out the value differences
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+
+
 
 
 ## License
@@ -105,5 +120,9 @@ N/A
 I have tested many times through the console log on the web browser and at one point made a smaller set of test data using a Javascript test but was unsucessful and only manage to achieve one of the five tasks.  I restarted many times afresh as I ended up having too much code that got commented out because it simply did not work and I just did not have the knowledge to modify the work.
 
 I now feel incredibly overwhelmed and cannot continue at this moment on this challenge without support. I  will endeavor to see support if I do not improve my understanding of this moving forward. 
+
+# Update on Tests
+
+I tested through the console and when elements were not working I console logged the totalchanges and index to check these elements work working first this allowed me to continue with the resy og the code.
 
 
